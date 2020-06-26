@@ -44,9 +44,9 @@ const questions = () => {
         name: "author",
         message: "What is your name and email?"
     }
-]) .then(answer=>{
+]) .then(data=>{
     //console.log(answer)})
-writeToFile("README.md",genrateMarkdown(answer))
+writeToFile("README.md",genrateMarkdown(data))
 })}
 
 function writeToFile(fileName, data) {console.log(process.cwd())
