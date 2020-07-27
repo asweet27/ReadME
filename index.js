@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
 const genrateMarkdown = require("./utils/generateMarkdown");
-const fs = require("fs")
-const path = require("path")
+const fs = require("fs");
+const path = require("path");
 const questions = () => {
     inquirer.prompt([
     {
@@ -43,15 +43,15 @@ const questions = () => {
         type: "input",
         name: "author",
         message: "What is your name and email?"
-    }
+    },
 ]) .then(data=>{
     //console.log(answer)})
 writeToFile("README.md",genrateMarkdown(data))
-})}
+})};
 
 function writeToFile(fileName, data) {console.log(process.cwd())
     return fs.writeFileSync(path.join(process.cwd(), fileName), data);
-}
+};
 
 
 questions ()
